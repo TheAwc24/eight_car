@@ -63,24 +63,24 @@ while True:
 
     # Select function based on mode
     if MODE == 0:
-        dots[0]= (WHITE, 0.2)
-        dots[1] = (RED, 0.2)
-        dots[2] = (WHITE, 0.2)
+        dots[0]= (WHITE)
+        dots[1] = (RED)
+        dots[2] = (WHITE)
         eight()
     elif MODE == 1:
-        dots[0] = (RED, 0.2)
-        dots[1] = (GREEN, 0.2)
-        dots[2] = (RED, 0.2)
+        dots[0] = (RED)
+        dots[1] = (GREEN)
+        dots[2] = (RED)
         fun()
     elif MODE == 2:
-        dots[0] = (BLUE, 0.2)
-        dots[1] = (YELLOW, 0.2)
-        dots[2] = (BLUE, 0.2)
+        dots[0] = (BLUE)
+        dots[1] = (YELLOW)
+        dots[2] = (BLUE)
         all_sounds()
     else:
-        dots[0] = (RED, 0.2)
-        dots[1] = (WHITE, 0.2)
-        dots[2] = (RED, 0.2)
+        dots[0] = (RED)
+        dots[1] = (WHITE)
+        dots[2] = (RED)
         eight()
 
     time.sleep(0.01)
