@@ -35,18 +35,18 @@ GREEN = (0, 255, 0)
 # Eight Button Function
 def eight():
     if not button.value:
-        os.system(f"flac -d -c 'sounds/{CLIP[0]}.flac' | aplay")
+        os.system(f"aplay {CLIP[0]}.wav")
 
 # Fun Button Function
 def fun():
     if not button.value:
         TRACK = CLIP[random.randrange(0,16)]
-        os.system(f"flac -d -c 'sounds/{TRACK}.flac' | aplay")
+        os.system(f"aplay {TRACK}.wav")
 
 # All Sounds Function
 def all_sounds():
     TRACK = CLIP[random.randrange(0,16)]
-    os.system(f"flac -d -c 'sounds/{TRACK}.flac' | aplay")
+    os.system(f"aplay {TRACK}.wav")
 
 # Main loop
 while True:
