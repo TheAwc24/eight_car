@@ -25,7 +25,7 @@ CLIP = ["eight", "8game_6_00", "bark4", "klaxon1", "raphael1", "raphael2", "raph
 # Light variables
 DOTSTAR_DATA = board.D5
 DOTSTAR_CLOCK = board.D6
-dots = adafruit_dotstar.DotStar(DOTSTAR_CLOCK, DOTSTAR_DATA, 3, brightness=0.2)
+dots = adafruit_dotstar.DotStar(DOTSTAR_CLOCK, DOTSTAR_DATA, 3, brightness=0.01)
 RED = (255, 0, 0)
 WHITE = (255, 255, 255)
 BLUE = (0, 0, 255)
@@ -34,18 +34,14 @@ GREEN = (0, 255, 0)
 
 # Eight Button Function
 def eight():
-    while True:
-        if not button.value:
-            TRACK = CLIP[random.randrange(0,16)]
-            os.system(f"flac -d -c 'sounds/{TRACK}.flac' | aplay")
-        time.sleep(0.01)
+    if not button.value:
+        os.system(f"flac -d -c 'sounds/{CLIP[0]}.flac' | aplay")
 
 # Fun Button Function
 def fun():
-    while True:
-        if not button.value:
-            os.system(f"flac -d -c 'sounds/{CLIP[0]}.flac' | aplay")
-        time.sleep(0.01)
+    if not button.value:
+        TRACK = CLIP[random.randrange(0,16)]
+        os.system(f"flac -d -c 'sounds/{TRACK}.flac' | aplay")
 
 # All Sounds Function
 def all_sounds():
@@ -83,4 +79,4 @@ while True:
         dots[2] = (RED)
         eight()
 
-    time.sleep(0.01)
+    time.sleep(0.5)
