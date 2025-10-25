@@ -20,7 +20,7 @@ button.pull = Pull.UP
 
 # Sound variables
 TRACK = ""
-CLIP = ["eight", "8game_6_00", "bark4", "klaxon1", "raphael1", "raphael2", "raphael3", "raphael4", "raphael5", "raphael6", "raphael7", "raphael8", "raphael9", "raphael10", "ui_buttons_b_01", "ui_buttons_b_02", "ui_buttons_b_03"]
+CLIP = ["eight", "bark4", "klaxon1", "raphael1", "raphael2", "raphael3", "raphael4", "raphael5", "raphael6", "raphael7", "raphael8", "raphael9", "raphael10", "ui_buttons_b_01", "ui_buttons_b_02", "ui_buttons_b_03"]
 
 # Light variables
 DOTSTAR_DATA = board.D5
@@ -40,12 +40,12 @@ def eight():
 # Fun Button Function
 def fun():
     if not button.value:
-        TRACK = CLIP[random.randrange(0,16)]
+        TRACK = CLIP[random.randrange(0,15)]
         os.system(f"aplay sounds/{TRACK}.wav")
 
 # All Sounds Function
 def all_sounds():
-    TRACK = CLIP[random.randrange(0,16)]
+    TRACK = CLIP[random.randrange(0,15)]
     os.system(f"aplay sounds/{TRACK}.wav")
 
 # Main loop
@@ -79,4 +79,4 @@ while True:
         dots[2] = (RED)
         eight()
 
-    time.sleep(0.5)
+    time.sleep(0.05)
